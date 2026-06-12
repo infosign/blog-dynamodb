@@ -24,7 +24,7 @@ async function fetchPage(cursor: string | null): Promise<{ items: Article[]; nex
   const params = new URLSearchParams({ tenantId: TENANT_ID, limit: '100' });
   if (cursor) params.set('cursor', cursor);
 
-  const res = await fetch(`${BASE_URL}/articles?${params}`, {
+  const res = await fetch(`${BASE_URL}/articles/status/published?${params}`, {
     headers: { 'x-api-key': getApiKey() },
   });
 
